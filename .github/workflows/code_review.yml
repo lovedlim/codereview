@@ -1,0 +1,30 @@
+name: CodeReview
+
+# 레포지토리에서 파일을 읽고, pull requests를 작성할 권한 설정
+permissions:
+  contents: read
+  pull-requests: write
+
+# 특정 이벤트 발생 시 워크플로우 실행
+on:
+  pull_request:
+    # PR이 오픈되거나 synchronize 될 때 실행
+    types: [opened, synchronize]
+
+jobs:
+  code-review:
+    # Ubuntu 환경에서 실행
+    runs-on: ubuntu-latest
+    steps:
+      # CodeReview 액션 사용
+      - uses: lovedlim/coderevieww@main
+        # 환경 변수 설정
+        env:
+          # GitHub 토큰
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # OpenAI API 키
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # 언어 설정 (한국어)
+          LANGUAGE: Korean
+          # 모델 설정 (GPT-3.5 Turbo)
+          MODEL: gpt-3.5-turbo
