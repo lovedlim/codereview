@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # CodeReview 액션 사용
-      - uses: lovedlim/coderevieww@main
+      - uses: lovedlim/codereview@main
         # 환경 변수 설정
         env:
           # GitHub 토큰
