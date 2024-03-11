@@ -23,7 +23,7 @@ jobs:
           # GitHub 토큰
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # OpenAI API 키
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI }}
           # 언어 설정 (한국어)
           LANGUAGE: Korean
           # 모델 설정 (GPT-3.5 Turbo)
